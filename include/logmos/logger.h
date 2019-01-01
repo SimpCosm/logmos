@@ -49,4 +49,9 @@ private:
     std::ostringstream os_;     // string stream used with C++ stream style (stream operator<<)
 };
 
+#define INFO(...) Logger::log(LOG_INFO, __FILE__, __LINE__, true, ## __VA_ARGS__)
+#define DEBUG(...) Logger::log(LOG_DEBUG, __FILE__, __LINE__, true, ## __VA_ARGS__)
+#define WARN(...) Logger::log(LOG_WARNING, __FILE__, __LINE__, true, ## __VA_ARGS__)
+#define ERROR(...) Logger::log(LOG_ERR, __FILE__, __LINE__, true, ## __VA_ARGS__)
+
 #endif  // __LOGGER_H__
